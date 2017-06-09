@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+navItems: Array<String>=['ff','ss']
+
   constructor() { }
 
   ngOnInit() {

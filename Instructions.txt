@@ -1,0 +1,6 @@
+1) run node.js command promt
+2)cd to folder
+3)npm install
+if ng command not working
+    3.5) 
+4)npm install -g @angular/cli

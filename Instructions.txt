@@ -2,5 +2,6 @@
 2)cd to folder
 3)npm install
 if ng command not working
-    3.5) 
+    3.5) Install Angular CLI globally, run:
+	    npm install -g @angular/cli
 4)npm install -g @angular/cli

@@ -1,6 +1,100 @@
+<H1>
+
+  home works </H1>
+
+<!--<ul>
+  <li (click)="onSelect(user)" *ngFor="let user of users">
+    {{user.firstName}} | {{user.lastName}}
+  </li>
+</ul>-->
+
+<ul>
+  <ng-template ngFor let-user [ngForOf]="users">
+    <li [@userState]="user.state" (click)="onSelect(user);toggleState();" 
+    (@userState.start)="animStarted($event)"
+    [@userState]="'in'"
+
+     (dbclick)="onSelect(user);deleteUser();">
+      {{user.lastName}}
+    </li>
+  </ng-template>
+</ul>
+
+----- FORM BEGINS ------------
+<form [formGroup]="userForm" class="form" novalidate (ngSubmit)="onSubmit($event, userForm)">
+  <div class="form__row">
+    <label for="lastName"> Last Name:</label>
+    <div class="form__input">
+      <input id="lastName" formControlName="lastName" (change)="clearControlValidation('lastName')" (focus)="clearControlValidation('lastName')"
+        type="text">
+      <div class="message messagwe__error" *ngIf="isFormSubmitted && userForm.controls['lastName'].invalid  && userForm.controls['lastName'].untouched ">
+        <span *ngIf="userForm.controls['lastName'].hasError('required')">last required</span>
+        <span *ngIf="userForm.controls['lastName'].hasError('pattern')">not valid</span>
+      </div>
+    </div>
+  </div>
+  <div class="form__row">
+    <label for="firstName"> First Name:</label>
+    <div class="form__input">
+      <input id="firstName" formControlName="firstName" type="text">
+      <div class="message messagwe__error" *ngIf="isFormSubmitted && userForm.controls['firstName'].invalid  && userForm.controls['firstName'].untouched ">
+        first required </div>
+    </div>
+  </div>
+  <div class="form__row">
+    <label for="email"> Email:</label>
+    <div class="form__input">
+      <input id="email" formControlName="email" type="text">
+      <div class="message messagwe__error" *ngIf="isFormSubmitted && userForm.controls['email'].invalid  && userForm.controls['email'].untouched ">
+        email required </div>
+    </div>
+  </div>
+  <div class="form__row">
+    <label for="age"> Age:</label>
+    <div class="form__input">
+      <input id="age" formControlName="age" type="number">
+      <div class="message messagwe__error" *ngIf="isFormSubmitted && userForm.controls['age'].invalid  && userForm.controls['age'].untouched ">
+        last required </div>
+    </div>
+  </div>
+  <div class="form__row">
+    <input type="submit" value="submit">
+    <input value="Reset" type="button" (click)="onClear()" />
+
+  </div>
+
+</form>
+
+
+
+
+---------------------------------Old -----------
 <nav>
-  <li *ngFor="let item in navItems">  {{item}}
+  <li *ngFor="let item of navItems">
+    <span [bold]>{{item}}</span>
+
   </li>
 </nav>
 
 
+<br/>
+<span [bold]>adsfasd</span>
+
+<div *ngFor="let user of users">
+  <p [bold] *while="user.id < 4">
+    {{user.name}}
+  </p>
+</div>
+<div>
+  <!--factorial 0 === {{factorialNumber | factorial }}-->
+</div>
+
+<br />
+<div>
+  <!--aaaaaaaaa=== {{ navItems | joinPipe }}-->
+</div>
+
+<br />
+<div *ngFor="let user of users">
+  {{user.firstName}}
+</div>

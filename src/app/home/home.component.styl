@@ -1,0 +1,37 @@
+prefix(prop,value)
+-moz-{prop} value
+-o-{prop} value
+-webkit-{prop} value
+{prop} value
+
+
+
+.boldText
+    font-weight:bold
+
+
+label
+display: block
+width: 200px
+text-align: right
+font-weight: bold
+
+.form
+    width: 500px
+
+.form__row
+    display: flex
+    justify-content: space-around
+    align-items: center
+    width:295px
+
+
+.form__input input
+    width: 100%
+
+
+.form__row + .form__row
+    margin-top: 5px
+    prefix("transition",3s ease all)
+
+//

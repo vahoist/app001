@@ -1,0 +1,14 @@
+a{
+    color: rebeccapurple;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+a.active-link{
+    color: yellowgreen;
+    text-decoration: underline;
+}
